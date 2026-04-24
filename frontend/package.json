@@ -4,11 +4,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:test": "next dev --hostname 127.0.0.1 --port 3000",
-    "build": "next build",
-    "start": "next start",
-    "start:test": "next start --hostname 127.0.0.1 --port 3000",
+    "dev": "node init && next dev",
+    "dev:test": "node init && next dev --hostname 127.0.0.1 --port 3000",
+    "build": "node init && next build",
+    "start": "node init && next start",
+    "start:test": "node init && next start --hostname 127.0.0.1 --port 3000",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "analyze": "cross-env ANALYZE=true next build",
@@ -23,7 +23,7 @@
     "test:visual:update": "cross-env PLAYWRIGHT_DISABLE_WEBSERVER=1 PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --config playwright.config.js tests/e2e/visual.spec.js tests/e2e/navigation.spec.js tests/e2e/performance.spec.js --reporter=line --update-snapshots",
     "test:perf": "playwright test --config playwright.config.js tests/e2e/performance.spec.js --project=chromium",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "node init && storybook build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^16.2.1",
